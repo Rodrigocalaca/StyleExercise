@@ -1,0 +1,508 @@
+﻿<Window x:Class="StyleExercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleExercise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--XAML left top right botton-->
+    <!--CSS top right botton left-->
+    <Window.Resources>
+
+        <!--#region BLUE COLORS-->
+        <Color x:Key="subtitleColor">
+            #666A79
+        </Color>
+        <SolidColorBrush x:Key="subtitleColorBrush" Color="{StaticResource subtitleColor}"/>
+
+        <Color x:Key="blueButtonColorRest">
+            #0078D4
+        </Color>
+        <SolidColorBrush x:Key="blueButtonColorRestBrush" Color="{StaticResource blueButtonColorRest}"/>
+
+        <Color x:Key="blueButtonColorHover">
+            #1D89DC
+        </Color>
+        <SolidColorBrush x:Key="blueButtonColorHoverBrush" Color="{StaticResource blueButtonColorHover}"/>
+
+        <Color x:Key="blueButtonColorPressed">
+            #0078D4
+        </Color>
+        <SolidColorBrush x:Key="blueButtonColorPressedBrush" Color="{StaticResource blueButtonColorPressed}"/>
+
+        <Color x:Key="blueButtonColorPressedBorder">
+            #0048A1
+        </Color>
+        <SolidColorBrush x:Key="blueButtonColorPressedBorderBrush" Color="{StaticResource blueButtonColorPressedBorder}"/>
+        
+        <Color x:Key="ButtonColorDisabled">
+            #E7E7E7
+        </Color>
+        <SolidColorBrush x:Key="ButtonColorDisabledBrush" Color="{StaticResource ButtonColorDisabled}"/>
+        <!--#endregion-->
+        
+        <!--#region RED COLORS-->
+        <Color x:Key="redButtonColorRest">
+            #FF3B30
+        </Color>
+        <SolidColorBrush x:Key="redButtonColorRestBrush" Color="{StaticResource redButtonColorRest}"/>
+
+        <Color x:Key="redButtonColorHover">
+            #FF4141
+        </Color>
+        <SolidColorBrush x:Key="redButtonColorHoverBrush" Color="{StaticResource redButtonColorHover}"/>
+
+        <Color x:Key="redButtonColorPressed">
+            #FF3B30
+        </Color>
+        <SolidColorBrush x:Key="redButtonColorPressedBrush" Color="{StaticResource redButtonColorPressed}"/>
+
+        <Color x:Key="redButtonColorPressedBorder">
+            #BD1111
+        </Color>
+        <SolidColorBrush x:Key="redButtonColorPressedBorderBrush" Color="{StaticResource redButtonColorPressedBorder}"/>
+        <!--#endregion-->
+        
+        <!--#region LIGHT COLORS-->
+        <Color x:Key="textLightColor">
+            #00B2BF
+        </Color>
+        <SolidColorBrush x:Key="textLightColorBrush" Color="{StaticResource textLightColor}"/>
+
+        <Color x:Key="LightButtonColorRest">
+            #00B2BF
+        </Color>
+        <SolidColorBrush x:Key="LightButtonColorRestBrush" Color="{StaticResource LightButtonColorRest}" Opacity="0.1"/>
+
+        <Color x:Key="LightButtonColorHover">
+            #00B2BF
+        </Color>
+        <SolidColorBrush x:Key="LightButtonColorHoverBrush" Color="{StaticResource LightButtonColorHover}" Opacity="0.2"/>
+
+        <Color x:Key="LightButtonColorPressed">
+            #00B2BF
+        </Color>
+        <SolidColorBrush x:Key="LightButtonColorPressedBrush" Color="{StaticResource LightButtonColorPressed}" Opacity="0.3"/>
+        <!--#endregion-->
+        
+        <!--#region WHITE COLORS-->
+        <Color x:Key="whiteButtonColorBorder">
+            #EDEDF0
+        </Color>
+        <SolidColorBrush x:Key="whiteButtonColorBorderBrush" Color="{StaticResource whiteButtonColorBorder}"/>
+
+        <Color x:Key="whiteButtonFontColor">
+            #1D1D1F
+        </Color>
+        <SolidColorBrush x:Key="whiteButtonFontColorBrush" Color="{StaticResource whiteButtonFontColor}"/>
+        <!--#endregion-->
+        
+        <!--#region PINK COLORS-->
+        <Color x:Key="PinkBorder">
+            #FF00D6
+        </Color>
+        <SolidColorBrush x:Key="PinkBorderBrush" Color="{StaticResource PinkBorder}"/>
+
+        <Color x:Key="PinkButtonColorHover">
+            #E50FAA
+        </Color>
+        <SolidColorBrush x:Key="PinkButtonColorHoverBrush" Color="{StaticResource PinkButtonColorHover}"/>
+
+        <Color x:Key="PinkButtonColorPressed">
+            #9E3A82
+        </Color>
+        <SolidColorBrush x:Key="PinkButtonColorPressedBrush" Color="{StaticResource PinkButtonColorPressed}"/>
+        <!--#endregion-->
+
+        <!--#region TEXTBLOCK-->
+        <Style x:Key="TitleStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+        <Style x:Key="BtnSubtitles" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Foreground" Value="{StaticResource subtitleColorBrush}"/>
+        </Style>
+        <Style x:Key="bodyStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="LineHeight" Value="20"/>
+        </Style>
+        <Style x:Key="bodyStyleDisabled" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="LineHeight" Value="20"/>
+            <Setter Property="Foreground" Value="#8E919D"/>
+        </Style>
+        <Style x:Key="notCalledBorder" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#FF00C7" />
+        </Style>
+        <!--#endregion-->
+        
+        <!--#region BOTOES SEPARADOS-->
+        <Style x:Key="btnBlueRest" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Padding="16 2 16 4" CornerRadius="13" Background="{StaticResource blueButtonColorRestBrush}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnBlueHover" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Padding="16 2 16 4" CornerRadius="13" Background="{StaticResource blueButtonColorHoverBrush}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnBluePressed" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="13" Background="{StaticResource blueButtonColorPressedBrush}">
+                            <Grid>
+                                <Rectangle Stroke="{StaticResource blueButtonColorPressedBorderBrush}" StrokeThickness="1" RadiusX="13" RadiusY="13"/>
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="btnBlueDisabled" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Padding="16 2 16 4" CornerRadius="13" Background="{StaticResource ButtonColorDisabledBrush}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+
+        <!--#region BLUE BUTTON-->
+        <Style x:Key="btnBlue" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="borderName"  CornerRadius="13" Background="{StaticResource blueButtonColorRestBrush}">
+                            <Grid>
+                                <Rectangle x:Name="borderClick" Stroke="{StaticResource blueButtonColorPressedBorderBrush}" StrokeThickness="1" RadiusX="13" RadiusY="13" Visibility="Collapsed"/>
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="borderName" Property="Background" Value="{StaticResource blueButtonColorHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True"> 
+                                <Setter TargetName="borderName" Property="Background" Value="{StaticResource blueButtonColorPressedBrush}"/>
+                                <Setter TargetName="borderClick" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="borderName" Property="Background" Value="{StaticResource ButtonColorDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="#8E919D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+
+        <!--#region RED BUTTON-->
+        <Style x:Key="btnRed" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="borderRed" CornerRadius="13" Background="{StaticResource redButtonColorRestBrush}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="redBorderClick" Stroke="{StaticResource redButtonColorPressedBorderBrush}" StrokeThickness="1.5" RadiusX="13" RadiusY="13" Visibility="Collapsed" Grid.ColumnSpan="2"/>
+                                <ContentPresenter Grid.Column="0" Margin="0 0 0 0"/>
+                                <Path x:Name="Icon" Margin="0 0 10.75 0" Grid.Column="1" Width="12" Height="20" Fill="White"
+                                 Data="M4.98204 4.20646C5.28196 3.92076 5.7567 3.9323 6.04239 4.23222L11.0437 9.48269C11.3196 9.77236 11.3196 10.2276 11.0437 10.5173L6.04239 15.7677C5.7567 16.0677 5.28196 16.0792 4.98204 15.7935C4.68212 15.5078 4.67058 15.0331 4.95627 14.7332L9.46486 9.99998L4.95627 5.2668C4.67058 4.96688 4.68212 4.49215 4.98204 4.20646ZM0.98204 4.20646C1.28196 3.92076 1.7567 3.9323 2.04239 4.23222L7.04372 9.48269C7.31965 9.77236 7.31965 10.2276 7.04372 10.5173L2.04239 15.7677C1.7567 16.0677 1.28196 16.0792 0.98204 15.7935C0.682118 15.5078 0.670581 15.0331 0.956273 14.7332L5.46486 9.99998L0.956273 5.2668C0.670581 4.96688 0.682118 4.49215 0.98204 4.20646Z"/>
+
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="borderRed" Property="Background" Value="{StaticResource redButtonColorHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="borderRed" Property="Background" Value="{StaticResource redButtonColorPressedBrush}"/>
+                                <Setter TargetName="redBorderClick" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="borderRed" Property="Background" Value="{StaticResource ButtonColorDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="#8E919D"/>
+                                <Setter TargetName="Icon" Property="Fill" Value="#8E919D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->    
+    
+        <!--#region LIGHT BUTTON-->
+        <Style x:Key="btnLight" TargetType="Button">
+            <Setter Property="FontFamily" Value="Body Medium"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="{StaticResource textLightColorBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="borderLight" CornerRadius="4" Background="{StaticResource LightButtonColorRestBrush}">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="borderLight" Property="Background" Value="{StaticResource LightButtonColorHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="borderLight" Property="Background" Value="{StaticResource LightButtonColorPressedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="borderLight" Property="Background" Value="{StaticResource ButtonColorDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="#8E919D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+
+        <Style x:Key="btnFloating" TargetType="Button">
+            <Setter Property="FontFamily" Value="Body Medium"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="{StaticResource whiteButtonFontColorBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="backGround" CornerRadius="4" Background="White">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="whiteBorder" Stroke="{StaticResource whiteButtonColorBorderBrush}" StrokeThickness="1" RadiusX="4" RadiusY="4"/>
+                                <Rectangle x:Name="whiteBorderAux" Stroke="{StaticResource whiteButtonColorBorderBrush}" StrokeThickness="1" RadiusX="4" RadiusY="4" Visibility="Collapsed">
+                                    <Rectangle.Effect>
+                                        <DropShadowEffect ShadowDepth="1" BlurRadius="0.5" Direction="0" Color="Black" Opacity="0.2"/>
+                                    </Rectangle.Effect>
+                                </Rectangle>
+                                <ContentPresenter/>
+                            </Grid>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0.6" BlurRadius="0.5" Color="Black" Opacity="0.1"/>
+                            </Border.Effect>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="whiteBorder" Property="StrokeThickness" Value="0.5"/>
+                                <Setter TargetName="whiteBorderAux" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="backGround" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect ShadowDepth="1.6" BlurRadius="3.6" Color="Black" Opacity="0.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="whiteBorder" Property="StrokeThickness" Value="0.5"/>
+                                <Setter TargetName="backGround" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect ShadowDepth="0.6" BlurRadius="0.5" Color="Black" Opacity="0.1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="backGround" Property="Background" Value="{StaticResource ButtonColorDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="#8E919D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="btnPink" TargetType="Button">
+            <Setter Property="FontFamily" Value="Inter"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="backGround" CornerRadius="4">
+                            
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0.0" EndPoint="0.5,1">
+                                    <GradientStop Color="#E50FAA" Offset="0"/>
+                                    <GradientStop Color="#9E3182" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <Rectangle x:Name="pinkBorder" Stroke="{StaticResource PinkBorderBrush}" StrokeThickness="1" RadiusX="4" RadiusY="4"/>
+                                <ContentPresenter/>
+                            </Grid>
+                            
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="backGround" Property="Background" Value="{StaticResource PinkButtonColorHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="backGround" Property="Background" Value="{StaticResource PinkButtonColorPressedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="pinkBorder" Property="Visibility" Value="Collapsed"/>
+                                <Setter TargetName="backGround" Property="Background" Value="{StaticResource ButtonColorDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="#8E919D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="18, 28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Margin="0 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="0 0 8 0">
+                <TextBlock Style="{StaticResource BtnSubtitles}" Margin="0 0 0 4">Rest</TextBlock>
+                <Button Style="{StaticResource btnBlueRest}">
+                    <TextBlock Style="{StaticResource bodyStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="8 0 8 0">
+                <TextBlock Style="{StaticResource BtnSubtitles}" Margin="0 0 0 4">Hover</TextBlock>
+                <Button Style="{StaticResource btnBlueHover}">
+                    <TextBlock Style="{StaticResource bodyStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Margin="8 0 8 0">
+                <TextBlock Style="{StaticResource BtnSubtitles}" Margin="0 0 0 4">Pressed</TextBlock>
+                <Button Style="{StaticResource btnBluePressed}">
+                    <TextBlock Style="{StaticResource bodyStyle}" Margin="16 2 16 4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left">
+                <TextBlock Style="{StaticResource BtnSubtitles}" Margin="0 0 0 4">Disabled</TextBlock>
+                <Button Style="{StaticResource btnBlueDisabled}">
+                    <TextBlock Style="{StaticResource bodyStyleDisabled}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource TitleStyle}">Estilos de Botão Chrome</TextBlock>
+
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Style="{StaticResource TitleStyle}" FontSize="12" Margin="0 0 0 8">Exemplo:</TextBlock>
+            <Button Style="{StaticResource btnBlue}" HorizontalAlignment="Left" IsEnabled="True">
+                <TextBlock Style="{StaticResource bodyStyle}" Margin="16 2 16 4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview"/>
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Row="3" Margin="0 20 0 0">
+            <Button Style="{StaticResource btnRed}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Style="{StaticResource bodyStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Preview" Margin="10 2 10 2"/>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="0 20 0 0">
+            <Button Style="{StaticResource btnLight}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Margin="12 8 12 8">Preview</TextBlock>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="5" Margin="0 20 0 0">
+            <Button Style="{StaticResource btnFloating}" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="True">
+                <TextBlock Margin="12 8 12 8">Preview</TextBlock>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="6" Margin="0 20 0 0">
+            <Button Style="{StaticResource btnPink}" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="True">
+                <Grid >
+                    <TextBlock x:Name="bordaRosa"  Margin="12 8 12 8" Text="Preview" Foreground="#FF00C7">
+                        <TextBlock.Effect>
+                            <BlurEffect Radius="2" KernelType="Box"/>
+                        </TextBlock.Effect>
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Margin="12 8 12 8" Text="Preview">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Foreground" Value="#A19F9D"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
